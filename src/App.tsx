@@ -89,6 +89,18 @@ const airlineTrust = [
   ["Готовность к интеграции", "API и аэропортовые процессы"],
 ];
 
+const contactCards = [
+  ["Авиакомпаниям", "Интеграция свободной емкости рейсов"],
+  ["Инвесторам", "Будущее авиационной логистики Центральной Азии"],
+  ["Партнерам", "Развитие региональной cargo-сети"],
+];
+
+const contactMethods = [
+  { label: "WhatsApp", value: "+7 776 111 6454", href: "https://wa.me/77761116454", mark: "WA" },
+  { label: "Telegram", value: "Скоро подключим", href: "#contact", mark: "TG" },
+  { label: "Email", value: "hello@easygo.kz", href: "mailto:hello@easygo.kz", mark: "@" },
+];
+
 const roadmap = [
   "MVP",
   "Kazakhstan Network",
@@ -704,7 +716,7 @@ function RoadmapMission() {
 
 function FutureVision() {
   return (
-    <section className="px-5 py-20 md:px-8" id="contact">
+    <section className="px-5 py-20 md:px-8" id="future">
       <div className="relative mx-auto max-w-6xl overflow-hidden rounded-lg border border-violet-300/20 p-8 text-center shadow-glow md:p-16">
         <img src="/hero-bg.png" alt="" className="absolute inset-0 h-full w-full object-cover opacity-[0.18] saturate-125" />
         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(3,3,12,.78),rgba(7,7,22,.97)),radial-gradient(circle_at_50%_18%,rgba(139,92,246,.34),transparent_34%),radial-gradient(circle_at_78%_70%,rgba(245,158,11,.14),transparent_30%)]" />
@@ -739,13 +751,86 @@ function FutureVision() {
   );
 }
 
+function ContactSection() {
+  return (
+    <section className="px-5 py-20 md:px-8" id="contact">
+      <div className="relative mx-auto max-w-6xl overflow-hidden rounded-lg border border-violet-300/20 bg-[#070716]/72 p-6 shadow-panel backdrop-blur-xl md:p-10">
+        <div className="absolute inset-0 network-grid opacity-20" />
+        <div className="absolute left-1/2 top-0 h-72 w-72 -translate-x-1/2 rounded-full bg-violet-500/18 blur-3xl" />
+        <div className="relative">
+          <div className="mx-auto max-w-3xl text-center">
+            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-easyYellow">Partnership</p>
+            <h2 className="mt-4 text-3xl font-semibold leading-tight text-white md:text-5xl">Готовы обсудить партнерство?</h2>
+            <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-slate-300 md:text-lg">
+              EasyGo формирует цифровую инфраструктуру авиационной логистики нового поколения.
+            </p>
+          </div>
+
+          <div className="mt-10 grid gap-4 md:grid-cols-3">
+            {contactCards.map(([title, text], index) => (
+              <div key={title} className="glass-panel rounded-lg border p-5">
+                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-easyYellow">0{index + 1}</p>
+                <h3 className="mt-4 text-xl font-semibold text-white">{title}</h3>
+                <p className="mt-3 text-sm leading-6 text-slate-300">{text}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-8 grid gap-3 md:grid-cols-3">
+            {contactMethods.map((method) => (
+              <a
+                key={method.label}
+                href={method.href}
+                target={method.href.startsWith("http") ? "_blank" : undefined}
+                rel={method.href.startsWith("http") ? "noreferrer" : undefined}
+                className="group flex items-center gap-4 rounded-lg border border-violet-300/15 bg-white/[0.055] p-4 backdrop-blur transition hover:border-violet-200/35 hover:bg-white/[0.085]"
+              >
+                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-easyYellow/35 bg-easyYellow/12 text-xs font-semibold text-white shadow-[0_0_24px_rgba(139,92,246,.22)]">
+                  {method.mark}
+                </span>
+                <span>
+                  <span className="block text-sm font-semibold text-white">{method.label}</span>
+                  <span className="mt-1 block text-sm text-slate-300">{method.value}</span>
+                </span>
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Footer() {
+  return (
+    <footer className="px-5 pb-10 pt-6 md:px-8">
+      <div className="mx-auto max-w-6xl border-t border-white/10 pt-8">
+        <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+          <div>
+            <p className="text-2xl font-semibold text-white">EasyGo</p>
+            <p className="mt-3 max-w-md text-sm leading-6 text-slate-400">
+              Цифровая инфраструктура авиационной логистики Центральной Азии.
+            </p>
+          </div>
+          <div className="flex flex-wrap gap-3 text-sm text-slate-300">
+            <a href="https://wa.me/77761116454" target="_blank" rel="noreferrer" className="hover:text-white">WhatsApp</a>
+            <a href="#contact" className="hover:text-white">Telegram</a>
+            <a href="mailto:hello@easygo.kz" className="hover:text-white">Email</a>
+          </div>
+        </div>
+        <p className="mt-8 text-xs text-slate-500">© 2026 EasyGo. Aviation cargo infrastructure.</p>
+      </div>
+    </footer>
+  );
+}
+
 function App() {
   return (
     <main className="relative isolate min-h-screen overflow-hidden bg-graphite text-white">
       <div className="fixed inset-0 -z-10 bg-[radial-gradient(circle_at_18%_8%,rgba(139,92,246,.30),transparent_25%),radial-gradient(circle_at_82%_2%,rgba(244,114,182,.18),transparent_26%),radial-gradient(circle_at_65%_92%,rgba(245,158,11,.10),transparent_28%),linear-gradient(180deg,#070716,#0b0921_42%,#060611)]" />
-      <nav className="fixed inset-x-0 top-0 z-30 px-5 py-5 md:px-8">
+      <nav className="fixed inset-x-0 top-0 z-30 px-3 py-4 md:px-8 md:py-5">
         <div className="mx-auto flex max-w-7xl justify-center md:justify-end">
-          <div className="flex items-center gap-4 rounded-full border border-white/[0.08] bg-[#03030c]/18 px-4 py-2.5 text-xs text-slate-200 shadow-[0_18px_70px_rgba(3,3,12,.18)] backdrop-blur-md sm:gap-6 sm:text-sm md:gap-8 md:px-6">
+          <div className="flex w-full max-w-[29rem] items-center justify-between rounded-full border border-white/[0.08] bg-[#03030c]/18 px-3 py-2.5 text-[11px] text-slate-200 shadow-[0_18px_70px_rgba(3,3,12,.18)] backdrop-blur-md sm:w-auto sm:justify-center sm:gap-6 sm:px-5 sm:text-sm md:gap-8 md:px-6">
             <a href="#network" className="hover:text-white">Сеть</a>
             <a href="#tracking" className="hover:text-white">Трекинг</a>
             <a href="#platform" className="hover:text-white">Платформа</a>
@@ -778,10 +863,10 @@ function App() {
             className="mx-auto mb-8 h-14 w-auto max-w-[230px] object-contain brightness-110 contrast-125 drop-shadow-[0_0_38px_rgba(139,92,246,.52)] sm:h-16 sm:max-w-[280px] md:h-20 md:max-w-[340px]"
           />
           <p className="mb-5 text-xs font-semibold uppercase tracking-[0.32em] text-easyYellow">Aviation cargo infrastructure network</p>
-          <h1 className="text-4xl font-semibold leading-tight text-white drop-shadow-[0_2px_28px_rgba(3,3,12,.55)] md:text-5xl">
+          <h1 className="text-3xl font-semibold leading-tight text-white drop-shadow-[0_2px_28px_rgba(3,3,12,.55)] sm:text-4xl md:text-5xl">
             EasyGo — цифровая инфраструктура авиационных грузов
           </h1>
-          <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-slate-200 drop-shadow-[0_2px_18px_rgba(3,3,12,.72)] md:text-2xl">
+          <p className="mx-auto mt-6 max-w-2xl text-base leading-7 text-slate-200 drop-shadow-[0_2px_18px_rgba(3,3,12,.72)] md:text-2xl md:leading-8">
             Превращаем свободную емкость пассажирских рейсов в управляемую cargo-сеть.
           </p>
           <div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
@@ -879,6 +964,8 @@ function App() {
       </section>
 
       <FutureVision />
+      <ContactSection />
+      <Footer />
     </main>
   );
 }
