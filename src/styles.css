@@ -1,0 +1,853 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: #070716;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.route-line {
+  transform: rotate(-14deg);
+  transform-origin: left center;
+}
+
+.glass-panel {
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.13), rgba(255, 255, 255, 0.035)),
+    rgba(13, 10, 34, 0.68);
+  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow:
+    0 28px 90px rgba(10, 7, 28, 0.48),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+main > section {
+  animation: section-rise 0.9s ease both;
+}
+
+.logo-shell {
+  isolation: isolate;
+}
+
+.network-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 42px 42px;
+}
+
+.cinematic-panel {
+  box-shadow:
+    0 34px 110px rgba(6, 4, 22, 0.58),
+    0 0 80px rgba(139, 92, 246, 0.16),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.hero-route-layer {
+  animation: hero-ambient-drift 14s ease-in-out infinite;
+  opacity: 0.58;
+  pointer-events: none;
+}
+
+.hero-route-pulse {
+  animation: route-dash 9s linear infinite, hero-route-breathe 5.8s ease-in-out infinite;
+  fill: none;
+  filter: drop-shadow(0 0 8px rgba(139, 92, 246, 0.72));
+  stroke: rgba(196, 181, 253, 0.62);
+  stroke-dasharray: 4 10;
+  stroke-linecap: round;
+  stroke-width: 0.34;
+}
+
+.hero-route-delay {
+  animation-delay: -2.8s;
+  stroke: rgba(245, 158, 11, 0.38);
+}
+
+.hero-air-node {
+  animation: hero-node-blink 3.8s ease-in-out infinite;
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  border-radius: 999px;
+  box-shadow:
+    0 0 18px rgba(139, 92, 246, 0.56),
+    0 0 34px rgba(245, 158, 11, 0.16);
+  height: 8px;
+  width: 8px;
+}
+
+.ambient-sweep {
+  animation: ambient-sweep 12s ease-in-out infinite;
+  background: linear-gradient(115deg, transparent 15%, rgba(255, 255, 255, 0.08) 45%, transparent 70%);
+  opacity: 0.28;
+  transform: translateX(-70%);
+}
+
+.route-animated,
+.future-route {
+  fill: none;
+  stroke-linecap: round;
+  stroke-dasharray: 6 9;
+}
+
+.kazakhstan-outline {
+  fill: rgba(255, 255, 255, 0.035);
+  filter: drop-shadow(0 0 34px rgba(139, 92, 246, 0.16));
+  stroke: rgba(167, 139, 250, 0.2);
+  stroke-width: 0.35;
+}
+
+.route-animated {
+  animation: route-dash 7s linear infinite;
+  filter: drop-shadow(0 0 8px rgba(139, 92, 246, 0.85));
+  stroke: #8b5cf6;
+  stroke-width: 0.55;
+}
+
+.route-delay {
+  animation-delay: -2.4s;
+  stroke: #f59e0b;
+}
+
+.route-soft {
+  animation-duration: 10s;
+  opacity: 0.7;
+}
+
+.future-route {
+  animation: route-dash 12s linear infinite;
+  opacity: 0.38;
+  stroke: #c4b5fd;
+  stroke-width: 0.38;
+}
+
+.float-card {
+  animation: float-card 6s ease-in-out infinite;
+}
+
+.premium-metric-card {
+  box-shadow:
+    0 20px 70px rgba(6, 4, 22, 0.42),
+    0 0 36px rgba(139, 92, 246, 0.12);
+}
+
+.flight-marker {
+  animation: aircraft-drift 8s ease-in-out infinite;
+}
+
+.pulse-node {
+  animation: pulse-node 2.8s ease-in-out infinite;
+  box-shadow: 0 0 24px rgba(139, 92, 246, 0.9);
+}
+
+.network-radar {
+  animation: radar-expand 4.8s ease-in-out infinite;
+  box-shadow: 0 0 50px rgba(139, 92, 246, 0.14);
+}
+
+.network-node-soft {
+  animation: secondary-node 3.8s ease-in-out infinite;
+  box-shadow: 0 0 18px rgba(103, 232, 249, 0.52);
+}
+
+.network-secondary-route {
+  filter: drop-shadow(0 0 6px rgba(103, 232, 249, 0.5));
+  opacity: 0.48;
+  stroke: #67e8f9;
+  stroke-width: 0.34;
+}
+
+.regional-route,
+.international-route {
+  fill: none;
+  stroke-linecap: round;
+}
+
+.regional-route {
+  animation: route-dash 8s linear infinite, regional-route-pulse 5.5s ease-in-out infinite;
+  filter: drop-shadow(0 0 9px rgba(103, 232, 249, 0.62));
+  opacity: 0.72;
+  stroke: #67e8f9;
+  stroke-dasharray: 6 9;
+  stroke-width: 0.52;
+}
+
+.international-route {
+  animation: route-dash 14s linear infinite, corridor-route-pulse 7.8s ease-in-out infinite;
+  filter: drop-shadow(0 0 8px rgba(167, 139, 250, 0.42));
+  opacity: 0.36;
+  stroke: #c4b5fd;
+  stroke-dasharray: 4 12;
+  stroke-width: 0.38;
+}
+
+.regional-node {
+  animation: secondary-node 3.6s ease-in-out infinite;
+  box-shadow:
+    0 0 18px rgba(103, 232, 249, 0.72),
+    0 0 34px rgba(139, 92, 246, 0.18);
+}
+
+.corridor-node {
+  animation: corridor-node 4.8s ease-in-out infinite;
+  box-shadow: 0 0 18px rgba(167, 139, 250, 0.34);
+}
+
+.network-expansion-halo {
+  animation: radar-expand 5.4s ease-in-out infinite;
+  box-shadow: 0 0 44px rgba(103, 232, 249, 0.12);
+}
+
+.progress-glow {
+  animation: progress-glow 3.5s ease-in-out infinite;
+  box-shadow: 0 0 24px rgba(139, 92, 246, 0.85);
+}
+
+.cargo-segment {
+  animation: cargo-segment 3.6s ease-in-out infinite;
+  box-shadow: 0 0 18px rgba(139, 92, 246, 0.55);
+}
+
+.flow-link {
+  background: linear-gradient(90deg, rgba(139, 92, 246, 0.05), rgba(139, 92, 246, 0.82), rgba(245, 158, 11, 0.25));
+  box-shadow: 0 0 18px rgba(139, 92, 246, 0.5);
+}
+
+.flow-link-animated {
+  overflow: hidden;
+}
+
+.flow-link-animated::after,
+.tracking-link::after {
+  animation: flow-pulse 2.4s linear infinite;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.92), transparent);
+  content: "";
+  height: 100%;
+  left: -40%;
+  position: absolute;
+  top: 0;
+  width: 42%;
+}
+
+.operation-step {
+  animation: operation-cycle 10.8s ease-in-out infinite;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.operation-node {
+  animation: node-cycle 10.8s ease-in-out infinite;
+}
+
+.operation-status {
+  min-height: 1rem;
+}
+
+.tracking-step {
+  animation: tracking-breathe 5.6s ease-in-out infinite;
+}
+
+.tracking-link {
+  background: linear-gradient(90deg, rgba(139, 92, 246, 0.16), rgba(245, 158, 11, 0.58), rgba(139, 92, 246, 0.16));
+  box-shadow: 0 0 18px rgba(139, 92, 246, 0.48);
+  overflow: hidden;
+}
+
+.ecosystem-node {
+  animation: ecosystem-float 6.8s ease-in-out infinite;
+  box-shadow: 0 0 34px rgba(139, 92, 246, 0.2);
+}
+
+.ecosystem-core {
+  animation: core-breathe 4.8s ease-in-out infinite;
+  box-shadow:
+    0 0 90px rgba(139, 92, 246, 0.46),
+    0 0 34px rgba(245, 158, 11, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+.ecosystem-link-line {
+  animation: route-dash 7.5s linear infinite;
+  fill: none;
+  filter: drop-shadow(0 0 7px rgba(139, 92, 246, 0.7));
+  opacity: 0.55;
+  stroke: #a78bfa;
+  stroke-dasharray: 4 8;
+  stroke-linecap: round;
+  stroke-width: 0.35;
+}
+
+.ai-line {
+  animation: ai-scan 3.8s ease-in-out infinite;
+  box-shadow: 0 0 18px rgba(139, 92, 246, 0.55);
+}
+
+.ai-orchestration-panel {
+  box-shadow:
+    0 34px 110px rgba(6, 4, 22, 0.56),
+    0 0 76px rgba(139, 92, 246, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.ai-map-stage {
+  box-shadow:
+    inset 0 0 80px rgba(103, 232, 249, 0.06),
+    inset 0 -40px 70px rgba(3, 3, 12, 0.36);
+}
+
+.ai-control-panel {
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.06),
+    0 18px 60px rgba(3, 3, 12, 0.26);
+}
+
+.ai-control-row {
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.ai-control-row:hover {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(167, 139, 250, 0.22);
+}
+
+.ai-kz-outline {
+  fill: rgba(103, 232, 249, 0.035);
+  opacity: 0.88;
+  stroke: rgba(167, 139, 250, 0.26);
+}
+
+.ai-scan-beam {
+  animation: ai-scan-beam 6.4s ease-in-out infinite;
+  left: -38%;
+  mix-blend-mode: screen;
+}
+
+.ai-scan-ring {
+  animation: ai-scan-ring 4.8s ease-in-out infinite;
+  box-shadow: 0 0 46px rgba(103, 232, 249, 0.16);
+}
+
+.ai-route-option,
+.ai-route-optimal,
+.ai-cargo-trace {
+  fill: none;
+  stroke-linecap: round;
+}
+
+.ai-route-option {
+  animation: route-dash 8.5s linear infinite, ai-route-evaluate 6s ease-in-out infinite;
+  filter: drop-shadow(0 0 7px rgba(103, 232, 249, 0.5));
+  opacity: 0.3;
+  stroke: #67e8f9;
+  stroke-dasharray: 5 10;
+  stroke-width: 0.4;
+}
+
+.ai-route-optimal {
+  animation: route-dash 5.6s linear infinite, ai-optimal-route 4s ease-in-out infinite;
+  filter:
+    drop-shadow(0 0 10px rgba(245, 158, 11, 0.95))
+    drop-shadow(0 0 22px rgba(139, 92, 246, 0.42));
+  stroke: #f59e0b;
+  stroke-dasharray: 8 8;
+  stroke-width: 0.82;
+}
+
+.ai-cargo-trace {
+  animation: ai-cargo-travel 3.9s linear infinite;
+  filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.86));
+  stroke: rgba(255, 255, 255, 0.95);
+  stroke-dasharray: 6 260;
+  stroke-width: 1.15;
+}
+
+.ai-hub {
+  animation: ai-hub-breathe 3.8s ease-in-out infinite;
+  box-shadow: 0 0 20px rgba(103, 232, 249, 0.62);
+}
+
+.ai-hub-primary {
+  box-shadow:
+    0 0 24px rgba(245, 158, 11, 0.72),
+    0 0 42px rgba(139, 92, 246, 0.48);
+}
+
+.ai-core-orb {
+  animation: ai-core-breathe 4.6s ease-in-out infinite;
+  background:
+    radial-gradient(circle at 50% 38%, rgba(103, 232, 249, 0.22), transparent 34%),
+    radial-gradient(circle, rgba(139, 92, 246, 0.34), rgba(7, 7, 22, 0.68) 64%);
+  box-shadow:
+    0 0 54px rgba(103, 232, 249, 0.22),
+    0 0 92px rgba(139, 92, 246, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+.ai-core-orb::before {
+  animation: route-dash 10s linear infinite;
+  border: 1px dashed rgba(103, 232, 249, 0.34);
+  border-radius: inherit;
+  content: "";
+  inset: -14px;
+  position: absolute;
+}
+
+.ai-analysis-tile {
+  animation: ai-analysis-tile 4.8s ease-in-out infinite;
+  opacity: 0.72;
+  box-shadow: 0 18px 50px rgba(3, 3, 12, 0.28);
+}
+
+.ai-decision-panel {
+  animation: decision-panel-glow 5.8s ease-in-out infinite;
+  box-shadow:
+    0 26px 90px rgba(3, 3, 12, 0.56),
+    0 0 44px rgba(139, 92, 246, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.ai-status-dot {
+  animation: ai-status-blink 1.6s ease-in-out infinite;
+  box-shadow: 0 0 18px rgba(103, 232, 249, 0.85);
+}
+
+.chart-bar {
+  animation: chart-rise 4s ease-in-out infinite;
+  transform-origin: bottom;
+}
+
+.market-card {
+  position: relative;
+}
+
+.market-card::before {
+  background: radial-gradient(circle at 50% 0%, rgba(139, 92, 246, 0.18), transparent 48%);
+  content: "";
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+}
+
+.market-card > * {
+  position: relative;
+}
+
+.market-curve {
+  animation: curve-draw 5s ease-in-out infinite;
+  fill: none;
+  filter: drop-shadow(0 0 8px rgba(139, 92, 246, 0.62));
+  stroke: #a78bfa;
+  stroke-dasharray: 220;
+  stroke-linecap: round;
+  stroke-width: 3;
+}
+
+@keyframes section-rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes ambient-sweep {
+  0%,
+  30% {
+    transform: translateX(-75%);
+  }
+  65%,
+  100% {
+    transform: translateX(75%);
+  }
+}
+
+@keyframes hero-ambient-drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(1.4%, -1%, 0);
+  }
+}
+
+@keyframes hero-route-breathe {
+  0%,
+  100% {
+    opacity: 0.28;
+  }
+  50% {
+    opacity: 0.82;
+  }
+}
+
+@keyframes hero-node-blink {
+  0%,
+  100% {
+    opacity: 0.38;
+    transform: scale(0.9);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.18);
+  }
+}
+
+@keyframes route-dash {
+  to {
+    stroke-dashoffset: -120;
+  }
+}
+
+@keyframes float-card {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes aircraft-drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(-7deg);
+  }
+  50% {
+    transform: translate3d(22px, -12px, 0) rotate(5deg);
+  }
+}
+
+@keyframes pulse-node {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.85;
+  }
+  50% {
+    transform: scale(1.24);
+    opacity: 1;
+  }
+}
+
+@keyframes secondary-node {
+  0%,
+  100% {
+    opacity: 0.56;
+    transform: scale(0.92);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.18);
+  }
+}
+
+@keyframes corridor-node {
+  0%,
+  100% {
+    opacity: 0.42;
+    transform: scale(0.94);
+  }
+  50% {
+    opacity: 0.82;
+    transform: scale(1.12);
+  }
+}
+
+@keyframes regional-route-pulse {
+  0%,
+  100% {
+    opacity: 0.46;
+  }
+  50% {
+    opacity: 0.86;
+  }
+}
+
+@keyframes corridor-route-pulse {
+  0%,
+  100% {
+    opacity: 0.22;
+  }
+  55% {
+    opacity: 0.52;
+  }
+}
+
+@keyframes radar-expand {
+  0%,
+  100% {
+    opacity: 0.18;
+    transform: translate(-50%, -50%) scale(0.82);
+  }
+  50% {
+    opacity: 0.46;
+    transform: translate(-50%, -50%) scale(1.16);
+  }
+}
+
+@keyframes flow-pulse {
+  to {
+    left: 105%;
+  }
+}
+
+@keyframes operation-cycle {
+  0%,
+  16% {
+    background: rgba(17, 16, 43, 0.9);
+    border-color: rgba(245, 158, 11, 0.45);
+    box-shadow:
+      0 0 34px rgba(139, 92, 246, 0.2),
+      inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    opacity: 1;
+  }
+  24%,
+  100% {
+    background: rgba(10, 10, 30, 0.7);
+    border-color: rgba(167, 139, 250, 0.15);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+    opacity: 0.72;
+  }
+}
+
+@keyframes node-cycle {
+  0%,
+  16% {
+    background: rgba(245, 158, 11, 0.78);
+    box-shadow: 0 0 30px rgba(139, 92, 246, 0.88);
+    transform: scale(1.08);
+  }
+  24%,
+  100% {
+    background: rgba(245, 158, 11, 0.15);
+    box-shadow: 0 0 12px rgba(139, 92, 246, 0.2);
+    transform: scale(1);
+  }
+}
+
+@keyframes tracking-breathe {
+  0%,
+  100% {
+    opacity: 0.78;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes progress-glow {
+  0%,
+  100% {
+    filter: brightness(1);
+  }
+  50% {
+    filter: brightness(1.45);
+  }
+}
+
+@keyframes cargo-segment {
+  0%,
+  100% {
+    opacity: 0.72;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes ecosystem-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes core-breathe {
+  0%,
+  100% {
+    filter: brightness(1);
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    filter: brightness(1.16);
+    transform: translate(-50%, -50%) scale(1.035);
+  }
+}
+
+@keyframes ai-scan {
+  0%,
+  100% {
+    opacity: 0.28;
+    transform: scaleX(0.72);
+  }
+  50% {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+
+@keyframes ai-scan-beam {
+  0%,
+  16% {
+    left: -42%;
+    opacity: 0;
+  }
+  42% {
+    opacity: 0.85;
+  }
+  72%,
+  100% {
+    left: 112%;
+    opacity: 0;
+  }
+}
+
+@keyframes ai-scan-ring {
+  0%,
+  100% {
+    opacity: 0.18;
+  }
+  50% {
+    opacity: 0.62;
+    box-shadow: 0 0 74px rgba(103, 232, 249, 0.24);
+  }
+}
+
+@keyframes ai-route-evaluate {
+  0%,
+  100% {
+    opacity: 0.22;
+  }
+  42% {
+    opacity: 0.72;
+  }
+  72% {
+    opacity: 0.34;
+  }
+}
+
+@keyframes ai-optimal-route {
+  0%,
+  38% {
+    opacity: 0.58;
+  }
+  56%,
+  100% {
+    opacity: 1;
+    stroke-width: 1;
+  }
+}
+
+@keyframes ai-cargo-travel {
+  to {
+    stroke-dashoffset: -266;
+  }
+}
+
+@keyframes ai-hub-breathe {
+  0%,
+  100% {
+    opacity: 0.72;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes ai-core-breathe {
+  0%,
+  100% {
+    filter: brightness(1);
+  }
+  50% {
+    filter: brightness(1.22);
+  }
+}
+
+@keyframes ai-analysis-tile {
+  0%,
+  100% {
+    opacity: 0.72;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes decision-panel-glow {
+  0%,
+  100% {
+    border-color: rgba(167, 139, 250, 0.22);
+  }
+  50% {
+    border-color: rgba(245, 158, 11, 0.38);
+  }
+}
+
+@keyframes ai-status-blink {
+  0%,
+  100% {
+    opacity: 0.45;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes chart-rise {
+  0%,
+  100% {
+    transform: scaleY(0.78);
+    opacity: 0.66;
+  }
+  50% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}
+
+@keyframes curve-draw {
+  0%,
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 0.62;
+  }
+  50% {
+    stroke-dashoffset: -70;
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
+}
