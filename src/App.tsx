@@ -98,7 +98,7 @@ const contactCards = [
 const contactMethods = [
   { label: "WhatsApp", value: "+7 776 111 6454", href: "https://wa.me/77761116454", mark: "WA" },
   { label: "Telegram", value: "Скоро подключим", href: "#contact", mark: "TG" },
-  { label: "Email", value: "hello@easy-go.kz", href: "mailto:hello@easy-go.kz", mark: "@" },
+  { label: "Email", value: "hello@easy-go.kz", href: "https://mail.google.com/mail/?view=cm&fs=1&to=hello@easy-go.kz", mark: "@" },
 ];
 
 const roadmap = [
