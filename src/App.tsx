@@ -966,6 +966,14 @@ function App() {
       <FutureVision />
       <ContactSection />
       <Footer />
+      <a
+  href="https://wa.me/77761116454?text=Здравствуйте!%20Меня%20интересует%20платформа%20EasyGo."
+  target="_blank"
+  rel="noreferrer"
+  className="fixed bottom-6 right-6 z-50 rounded-full bg-green-500 px-5 py-4 text-sm font-bold text-white shadow-lg hover:bg-green-600"
+>
+  WhatsApp
+</a>
     </main>
   );
 }
