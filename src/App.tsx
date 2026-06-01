@@ -818,7 +818,7 @@ function Footer() {
             <a href="mailto:hello@easygo.kz" className="hover:text-white">Email</a>
           </div>
         </div>
-        <p className="mt-8 text-xs text-slate-500">© 2026 EasyGo. Aviation cargo infrastructure.</p>
+        <p className="mt-8 text-xs text-slate-500">© 2026 EasyGo. © 2026 EasyGo. Digital Air Cargo Network.</p>
       </div>
     </footer>
   );
