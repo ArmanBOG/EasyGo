@@ -781,7 +781,7 @@ function ContactSection() {
               <a
                 key={method.label}
                 href={method.href}
-                target={method.href.startsWith("http") ? "_blank" : undefined}
+                target={method.href.startsWith("http") ? "_blank" : "_self"}
                 rel={method.href.startsWith("http") ? "noreferrer" : undefined}
                 className="group flex items-center gap-4 rounded-lg border border-violet-300/15 bg-white/[0.055] p-4 backdrop-blur transition hover:border-violet-200/35 hover:bg-white/[0.085]"
               >
