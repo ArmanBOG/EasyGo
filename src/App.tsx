@@ -862,15 +862,15 @@ function App() {
             alt="EasyGo"
             className="mx-auto mb-8 h-14 w-auto max-w-[230px] object-contain brightness-110 contrast-125 drop-shadow-[0_0_38px_rgba(139,92,246,.52)] sm:h-16 sm:max-w-[280px] md:h-20 md:max-w-[340px]"
           />
-          <p className="mb-5 text-xs font-semibold uppercase tracking-[0.32em] text-easyYellow">Aviation cargo infrastructure network</p>
+          <p className="mb-5 text-xs font-semibold uppercase tracking-[0.32em] text-easyYellow">Digital Air Cargo Network</p>
           <h1 className="text-3xl font-semibold leading-tight text-white drop-shadow-[0_2px_28px_rgba(3,3,12,.55)] sm:text-4xl md:text-5xl">
-            EasyGo — цифровая инфраструктура авиационных грузов
+            EasyGo — цифровая сеть авиационной логистики Центральной Азии
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-base leading-7 text-slate-200 drop-shadow-[0_2px_18px_rgba(3,3,12,.72)] md:text-2xl md:leading-8">
             Превращаем свободную емкость пассажирских рейсов в управляемую cargo-сеть.
           </p>
           <div className="mt-9 flex flex-col justify-center gap-3 sm:flex-row">
-            <Button>Стать партнером</Button>
+            <Button>Запустить пилот</Button>
             <Button variant="secondary" href="#network">Изучить возможности</Button>
           </div>
         </div>
